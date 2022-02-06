@@ -44,7 +44,7 @@ import org.dominokit.jackson.stream.Stack;
  * stream, one token at a time. The stream includes both literal values (strings, numbers, booleans
  * and nulls) as well as the begin and end delimiters of objects and arrays.
  *
- * <h3>Encoding JSON</h3>
+ * <h2>Encoding JSON</h2>
  *
  * To encode your data as JSON, create a new {@code JsonWriter}. Each JSON document must contain one
  * top-level array or object. Call methods on the writer as you walk the structure's contents,
@@ -60,7 +60,7 @@ import org.dominokit.jackson.stream.Stack;
  *       arrays. Finally close the object using {@link #endObject()}.
  * </ul>
  *
- * <h3>Example</h3>
+ * <h2>Example</h2>
  *
  * Suppose we'd like to encode a stream of messages such as the following:
  *
