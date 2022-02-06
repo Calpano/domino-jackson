@@ -16,6 +16,7 @@
 
 package org.dominokit.jackson.deser.map;
 
+import java.util.Collection;
 import java.util.Map;
 import org.dominokit.jackson.JsonDeserializationContext;
 import org.dominokit.jackson.JsonDeserializer;
@@ -90,7 +91,7 @@ public abstract class BaseMapJsonDeserializer<M extends Map<K, V>, K, V>
   public void setBackReference(
       String referenceName, Object reference, M value, JsonDeserializationContext ctx) {
     if (null != value) {
-      for (V val : value.values()) {
+      for (V val : (Collection<V>) ((Map<K,V>) value).values()) {
         valueDeserializer.setBackReference(referenceName, reference, val, ctx);
       }
     }

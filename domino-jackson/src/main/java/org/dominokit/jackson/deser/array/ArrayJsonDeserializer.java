@@ -97,7 +97,7 @@ public class ArrayJsonDeserializer<T> extends AbstractArrayJsonDeserializer<T[]>
   public void setBackReference(
       String referenceName, Object reference, T[] value, JsonDeserializationContext ctx) {
     if (null != value && value.length > 0) {
-      for (T val : value) {
+      for (T val : (T[]) value) {
         deserializer.setBackReference(referenceName, reference, val, ctx);
       }
     }

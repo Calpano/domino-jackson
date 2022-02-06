@@ -49,7 +49,7 @@ public abstract class BaseIterableJsonDeserializer<I extends Iterable<T>, T>
   public void setBackReference(
       String referenceName, Object reference, I value, JsonDeserializationContext ctx) {
     if (null != value) {
-      for (T val : value) {
+      for (T val : (Iterable<T>) value) {
         deserializer.setBackReference(referenceName, reference, val, ctx);
       }
     }
