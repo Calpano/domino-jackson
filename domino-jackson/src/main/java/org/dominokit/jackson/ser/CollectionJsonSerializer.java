@@ -83,7 +83,7 @@ public class CollectionJsonSerializer<C extends Collection<T>, T> extends JsonSe
       serializer.serialize(writer, values.iterator().next(), ctx, params);
     } else {
       writer.beginArray();
-      for (T value : values) {
+      for (T value : (Collection<T>) values) {
         serializer.serialize(writer, value, ctx, params);
       }
       writer.endArray();
